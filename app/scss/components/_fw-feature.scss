@@ -1,0 +1,26 @@
+.fw-feature {
+  background-color: var(--color-fullwidth-bg);
+  color: var(--color-text-light);
+
+  //cele comentate au fost mutate in _fullwidth pentru ca sunt folosite si in _fw-cta
+  //text-align: center;
+  //
+  //&__wrapper {
+  //  display: grid;
+  //  justify-items: center;
+  //}
+  //
+  //&__title {
+  //  margin-block-end: 20px;
+  //}
+  //
+  //&__description {
+  //  max-width: 80ch;
+  //  margin-block-end: 40px;
+  //}
+
+  &__image {
+    width: 100%;
+    max-width: calc(792 / 16 * 1rem);
+  }
+}

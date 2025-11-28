@@ -1,0 +1,38 @@
+:root {
+  --c-white: hsl(0, 0%, 100%);
+  --c-gray-dark: hsl(233, 14%, 25%);
+  --c-purple: hsl(232, 58%, 55%);
+  --c-teal: hsl(180, 100%, 42%);
+  --c-teal-dark: hsl(180, 100%, 37%);
+  --c-transparent: transparent;
+  --c-magenta: hsl(320, 85%, 41%);
+  --c-yellow: hsl(50, 99%, 53%);
+
+  --color-main-bg: var(--c-white);
+  --color-text-dark: var(--c-gray-dark);
+  --color-text-light: var(--c-white);
+  --color-header-bg: var(--c-purple);
+  --color-topnav-gradient-1: var(--c-teal);
+  --color-topnav-gradient-2: var(--c-yellow);
+  --color-hero-bg: var(--c-purple);
+  --color-button-primary-bg: var(--c-teal);
+  --color-button-primary-bg-hover: var(--c-teal-dark);
+  --color-button-primary-border: var(--c-teal);
+  --color-button-primary-border-hover: var(--c-teal-dark);
+  --color-button-primary-text: var(--c-gray-dark);
+  --color-button-primary-white-bg: var(--c-white);
+  --color-button-primary-white-bg-hover: var(--c-teal);
+  --color-button-primary-white-border: var(--c-white);
+  --color-button-primary-white-border-hover: var(--c-teal);
+  --color-button-primary-white-text: var(--c-gray-dark);
+  --color-button-secondary-bg: var(--c-transparent);
+  --color-button-secondary-bg-hover: var(--c-white);
+  --color-button-secondary-border: var(--c-white);
+  --color-button-secondary-text: var(--c-white);
+  --color-button-secondary-text-hover: var(--color-hero-bg);
+  --color-fullwidth-bg: var(--c-magenta);
+  --color-cta-gradient-1: var(--c-gray-dark);
+  --color-cta-gradient-2: var(--c-purple);
+  --color-cta-gradient-3: var(--c-teal);
+  --color-footer-link-hover: var(--c-magenta);
+}

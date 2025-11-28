@@ -1,0 +1,13 @@
+.wrapper {
+  //cea mai mica valoare - 100% - 48px pt mobile si 1200px pt desktop
+  //48px pentru a lăsa 24px in stânga si in dreapta (24px pt ca este centrat
+  // datorita margin-inline:auto)
+  //width: min(100% - util.rem(48), util.rem(1200));
+  width: min(calc(100% - 48px), (1200 / 16 * 1rem));
+  margin-inline: auto; //margine stânga-dreapta
+  padding-block: 60px;
+
+  @media (width >= calc(1000 / 16 * 1rem)) {
+    padding-block: 80px;
+  }
+}

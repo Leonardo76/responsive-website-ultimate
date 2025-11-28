@@ -1,0 +1,76 @@
+.footer {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px;
+    //grid-auto-flow: column;
+
+    @media(width >= calc(600 / 16 * 1rem)) {
+      grid-template-columns: repeat(4, auto);//1fr = equal space; auto=based on content
+    }
+  }
+
+  &__top {
+    grid-column: 1 / -1; //or 1 / 3 or 1 / span 2 (4 for desktop)
+  }
+
+  &__homelink {
+    //adaug astea pt ca altfel face logo clickable si in afara imaginii
+    //datorita faptului ca avem imagine in interiorul unui link
+    display: block;
+    width: fit-content; //nu merge fara display: block
+
+  }
+
+  &__logo {
+    width: calc(128 / 16 * 1rem);
+    margin-block-end: 10px;
+  }
+
+  &__copyright {
+
+  }
+
+  &__column {
+  }
+
+  &__title {
+    font-size: calc(22 / 16 * 1rem);
+    margin-block-end: 6px;
+  }
+
+  &__links {
+    display: grid;
+    gap: 6px;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    display: inline-flex;
+    gap: 16px;
+    align-items: center;
+    font-size: calc(18 / 16 * 1rem);
+    color: var(--color-text-dark);
+    transition: color 0.15s ease-in-out;
+
+    &:hover {
+      color: var(--color-footer-link-hover);
+
+      .footer__social-path {
+        fill: var(--color-footer-link-hover);
+      }
+
+    }
+  }
+
+  &__social-svg {
+    width: calc(18 / 16 * 1rem);
+  }
+
+  &__social-path {
+    fill: var(--color-text-dark);
+    transition: fill 0.15s ease-in-out;
+  }
+}

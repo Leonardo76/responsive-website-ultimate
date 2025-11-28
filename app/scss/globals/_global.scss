@@ -1,0 +1,72 @@
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: var(--font), Arial, Helvetica, sans-serif;
+  line-height: 1.3;
+  color: var(--color-text-dark);
+
+  padding-block-end: 50vh; //temporary
+}
+
+h1, h2, h3 {
+  line-height: 1.1;
+}
+
+h1, h2, h3, p {
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+
+a {
+  text-decoration: none;
+}
+
+header ul, footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+p {
+  font-size: var(--font-size-p);
+
+  &.medium {
+    font-size: var(--font-size-p-medium);
+
+    @media (width >= calc(600 / 16 * 1rem)) {
+      font-size: var(--font-size-p-medium-desktop);
+    }
+  }
+
+  &.large {
+    font-size: var(--font-size-p-large);
+
+    @media (width >= calc(600 / 16 * 1rem)) {
+      font-size: var(--font-size-p-large-desktop);
+    }
+  }
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

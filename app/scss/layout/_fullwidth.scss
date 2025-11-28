@@ -1,0 +1,17 @@
+.fullwidth {
+  text-align: center;
+
+  &__wrapper {
+    display: grid;
+    justify-items: center;
+  }
+
+  &__title {
+    margin-block-end: 20px;
+  }
+
+  &__description {
+    max-width: 80ch;
+    margin-block-end: 40px;
+  }
+}

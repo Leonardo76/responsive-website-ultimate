@@ -1,0 +1,17 @@
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  &.skip:focus {
+    left: 0;
+    width: auto;
+    height: auto;
+    background-color: var(--color-text-light);
+    padding: 0.5rem;
+    border: 1px solid;
+  }
+}

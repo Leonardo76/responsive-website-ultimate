@@ -1,0 +1,26 @@
+.fw-cta {
+  background: linear-gradient(to right,
+          var(--color-cta-gradient-1),
+          var(--color-cta-gradient-2) 75%,
+          var(--color-cta-gradient-3) 150%);
+  color: var(--color-text-light);
+
+  @media (width >= calc(1000 / 16 * 1rem)) {
+    background: linear-gradient(to right,
+            var(--color-cta-gradient-1),
+            var(--color-cta-gradient-2) 55%,
+            var(--color-cta-gradient-3) 110%);
+  }
+
+  &__wrapper {
+  }
+
+  &__title {
+  }
+
+  &__description {
+  }
+
+  &__button {
+  }
+}
