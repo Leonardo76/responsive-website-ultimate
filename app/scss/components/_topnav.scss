@@ -49,9 +49,19 @@
     text-transform: uppercase;
     color: var(--color-text-light);
 
-    &:hover {
-      text-decoration: underline 2px;
-      text-underline-offset: 4px;
+    &:after {
+      content: ""; //is necessary
+      display: block;
+      height: 3px;
+      background: linear-gradient(to right,
+              var(--color-topnav-gradient-1),
+              var(--color-topnav-gradient-2) 80%);
+      opacity: 0;
+      transition: opacity 0.15s ease-in-out;
+    }
+
+    &:hover:after {
+      opacity: 1;
     }
   }
 }
