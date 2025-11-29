@@ -33,6 +33,10 @@ h2 {
 
 h3 {
   font-size: var(--font-size-h3);
+
+  &.large {
+    font-size: var(--font-size-h3-large);
+  }
 }
 
 
@@ -61,6 +65,14 @@ p {
 
     @media (width >= calc(600 / 16 * 1rem)) {
       font-size: var(--font-size-p-large-desktop);
+    }
+  }
+
+  & > a {
+    color: var(--color-text-link);
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
