@@ -1,9 +1,22 @@
 .testimonial {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+
+
   &__wrapper {
-    max-width: calc(800 / 16 * 1rem);
+    //max-width: calc(800 / 16 * 1rem);
   }
 
   &__figure {
+    @media (width >= calc(1000 / 16 * 1rem)) {
+      display: grid;
+      column-gap: 40px;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(2, auto); //auto - the size or row depends of the content (auto height)
+      grid-template-areas:
+              "l-quote quote   quote  quote  quote  r-quote"
+              ".       author  author author author .";
+    }
   }
 
   &__icon {
@@ -14,15 +27,47 @@
       width: calc(78 / 16 * 1rem);
       margin-block-end: 30px;
     }
+
+    @media (width >= calc(1000 / 16 * 1rem)) {
+      margin-block-end: 0;
+    }
+
+    &:first-child {
+      @media (width >= calc(1000 / 16 * 1rem)) {
+        grid-area: l-quote;
+        justify-self: end;
+      }
+    }
+
+    &:last-child {
+      @media (width < calc(1000 / 16 * 1rem)) {
+        display: none;
+      }
+
+      @media (width >= calc(1000 / 16 * 1rem)) {
+        grid-area: r-quote;
+        align-self: end;
+        rotate: 180deg;
+      }
+    }
+  }
+
+  &__icon-path {
+    fill: var(--color-icon);
   }
 
   &__blockquote {
+    @media (width >= calc(1000 / 16 * 1rem)) {
+      grid-area: quote;
+      padding-block-start: 40px;
+    }
   }
 
   &__quote-text {
     font-size: var(--font-size-quote);
     font-weight: 700;
     margin-block-end: 30px;
+    text-wrap: wrap; //cancel text-wrap:balance from global on paragraph (with balance, right quote is kind of far from text)
 
     @media (width >= calc(600 / 16 * 1rem)) {
       margin-block-end: 40px;
@@ -39,6 +84,10 @@
     @media (width >= calc(600 / 16 * 1rem)) {
       flex-direction: row;
       text-align: left;
+    }
+
+    @media (width >= calc(1000 / 16 * 1rem)) {
+      grid-area: author;
     }
   }
 

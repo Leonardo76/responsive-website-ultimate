@@ -3,6 +3,7 @@
   --c-gray-dark: hsl(233, 14%, 25%);
   --c-purple: hsl(232, 58%, 55%);
   --c-teal: hsl(180, 100%, 42%);
+  --c-teal-semitransparent: hsla(0, 0%, 100%,50%);
   --c-teal-dark: hsl(180, 100%, 37%);
   --c-transparent: transparent;
   --c-magenta: hsl(320, 85%, 41%);
@@ -36,4 +37,16 @@
   --color-cta-gradient-2: var(--c-purple);
   --color-cta-gradient-3: var(--c-teal);
   --color-footer-link-hover: var(--c-magenta);
+}
+
+.testimonial{
+  --color-bg: var(--color-main-bg);
+  --color-text: var(--color-text-dark);
+  --color-icon: var(--c-teal);
+
+  &.dark{
+    --color-bg: var(--c-purple);
+    --color-text: var(--color-text-light);
+    --color-icon: var(--c-teal-semitransparent);
+  }
 }
