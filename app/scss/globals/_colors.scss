@@ -1,6 +1,7 @@
 :root {
   --c-white: hsl(0, 0%, 100%);
   --c-gray-dark: hsl(233, 14%, 25%);
+  --c-gray-dark-40: hsla(233, 14%, 25%, 40%);
   --c-purple: hsl(232, 58%, 55%);
   --c-teal: hsl(180, 100%, 42%);
   --c-teal-semitransparent: hsla(0, 0%, 100%,50%);
@@ -8,6 +9,7 @@
   --c-transparent: transparent;
   --c-magenta: hsl(320, 85%, 41%);
   --c-yellow: hsl(50, 99%, 53%);
+  --c-blue: hsl(245, 75%, 39%);
 
   --color-main-bg: var(--c-white);
   --color-text-dark: var(--c-gray-dark);
@@ -32,6 +34,11 @@
   --color-button-secondary-border: var(--c-white);
   --color-button-secondary-text: var(--c-white);
   --color-button-secondary-text-hover: var(--color-hero-bg);
+  --color-blog-gradient-1: var(--c-blue);
+  --color-blog-gradient-2: var(--c-magenta);
+  --color-blog-link-hover: var(--c-magenta);
+  --color-blog-shadow: var(--c-gray-dark-40);
+
   --color-fullwidth-bg: var(--c-magenta);
   --color-cta-gradient-1: var(--c-gray-dark);
   --color-cta-gradient-2: var(--c-purple);

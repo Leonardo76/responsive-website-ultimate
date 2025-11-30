@@ -1,9 +1,11 @@
+@use "../util/functions" as *;
+
 .alt-features {
   &__wrapper {
     display: grid;
     gap: 60px;
 
-    @media (width >= calc(1000 / 16 * 1rem)) {
+    @media (width >= rem(1000)) {
       gap: 80px;
     }
 
@@ -12,7 +14,7 @@
   &__item {
     display: grid;
     gap: 40px 100px;
-    @media (width >= calc(1000 / 16 * 1rem)) {
+    @media (width >= rem(1000)) {
       grid-template-columns: 5fr 6fr;
       align-items: center;
 
@@ -28,9 +30,9 @@
   &__image {
     justify-self: center;
 
-    @media (width < calc(600 / 16 * 1rem)) {
-      max-width: calc(200 / 16 * 1rem);
-      max-height: calc(200 / 16 * 1rem);
+    @media (width < rem(600)) {
+      max-width: rem(200);
+      max-height: rem(200);
       //object-fit: contain;//menține aspect ratio
     }
   }

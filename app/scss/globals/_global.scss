@@ -52,6 +52,10 @@ header ul, footer ul {
 p {
   font-size: var(--font-size-p);
 
+  &.small{
+    font-size: var(--font-size-p-small);
+  }
+
   &.medium {
     font-size: var(--font-size-p-medium);
 

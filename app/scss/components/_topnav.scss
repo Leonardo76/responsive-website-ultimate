@@ -1,3 +1,5 @@
+@use "../util/functions" as *;
+
 .topnav {
   background-color: var(--color-header-bg);
 
@@ -8,7 +10,7 @@
     flex-wrap: wrap;
     padding-block: 12px;
 
-    @media (width >= calc(600 / 16 * 1rem)) {
+    @media (width >= rem(600)) {
       padding-block: 20px;
     }
   }
@@ -21,10 +23,10 @@
 
   &__logo {
     //min-width: calc(70 / 16 * 1rem);
-    width: calc(70 / 16 * 1rem);
+    width: 70px;
 
-    @media (width >= calc(600 / 16 * 1rem)) {
-      width: calc(128 / 16 * 1rem);
+    @media (width >= rem(600)) {
+      width: 128px;
     }
   }
 
@@ -34,7 +36,7 @@
     //list-style-type: none;
     //padding: 0;
 
-    @media (width >= calc(600 / 16 * 1rem)) {
+    @media (width >= rem(600)) {
       gap: 40px;
     }
   }

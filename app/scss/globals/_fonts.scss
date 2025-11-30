@@ -37,6 +37,7 @@
   --font-size-h3: var(--fs-24);
   --font-size-h3-large: var(--fs-36);
   --font-size-p: var(--fs-18);
+  --font-size-p-small: var(--fs-16);
   --font-size-p-medium: var(--fs-20);
   --font-size-p-medium-desktop: var(--fs-24);
   --font-size-p-large: var(--fs-24);
@@ -45,6 +46,8 @@
   --font-size-pre-title: var(--fs-20);
   --font-size-quote: var(--fs-24);
   --font-size-quote-description: var(--fs-20);
+  --font-size-datetime: var(--fs-14);
+  --font-size-readtime: var(--fs-14);
 
   @media(width >= calc(600 / 16 * 1rem)) {
     --font-size-topnav: var(--fs-16);
