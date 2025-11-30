@@ -234,7 +234,6 @@
             </figure>
         </div>
     </section>
-
     <section class="blog">
         <div class="wrapper blog__wrapper">
             <h2 class="blog__title">Recent blog posts</h2>
@@ -358,8 +357,13 @@
         <div class="wrapper fw-cta__wrapper fullwidth__wrapper">
             <h2 class="fw-cta__title fullwidth__title">Get started with Mythos today</h2>
             <p class="fw-cta__description fullwidth__description large">
-                Find the next undiscovered unicorn with a free 14-day trial.</p>
-            <a href="" class="button primary white fw-cta__button ">Free trial</a>
+                Contact us to find the next undiscovered unicorn.</p>
+            <form class="form" action="" method="post">
+                <label class="form__label" for="txtEmail">Email address</label>
+                <input class="form__text" type="email" name="email" id="txtEmail" required
+                       placeholder="Enter your email address">
+                <button class="button primary white form__button" type="submit">Contact</button>
+            </form>
         </div>
     </section>
 </main>

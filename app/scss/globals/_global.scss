@@ -86,3 +86,8 @@ img, picture, svg, video {
   max-width: 100%;
   height: auto;
 }
+
+input, button, textarea, select {
+  font: inherit;//oblig sa ia fontul din body nu pe cel implicit din browser
+  border: none;
+}
