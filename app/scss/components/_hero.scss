@@ -13,6 +13,10 @@
     background-size: calc(100% + 10px) auto;
   }
 
+  @media (width >= rem(2000)) {
+    background-size: calc(100% + 10px) 100px;
+  }
+
   &__wrapper {
     //display: flow-root;//creează un context de tip bloc pentru wrapper astfel încât marginea imaginii nu mai impinge in navbar
     //daca folosim margin-block (top si bottom) in image
