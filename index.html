@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mythos</title>
     <link rel="stylesheet" href="style.css">
+    <script src="body-scroll-lock-upgrade.js"></script>
     <script src="script.js" defer></script>
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"/>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
@@ -28,17 +29,40 @@
                  height="36">
         </a>
         <nav>
-            <ul class="topnav__links">
-                <li class="topnav__item">
-                    <a href="/" class="topnav__link">Features</a>
-                </li>
-                <li class="topnav__item">
-                    <a href="/" class="topnav__link">Pricing</a>
-                </li>
-                <li class="topnav__item">
-                    <a href="/" class="topnav__link">About</a>
-                </li>
-            </ul>
+            <!-- span and aria attributes are for blind people-->
+            <span id="nav-label" hidden>Navigation</span>
+            <span id="close-label" hidden>Close Navigation</span>
+
+            <div class="topnav__overlay"></div>
+            <button id="btnOpen" class="topnav__open"
+                    aria-expanded="false"
+                    aria-labelledby="nav-label">
+                <img src="/img/hamburger.svg" alt="" width="30" height="23">
+            </button>
+            <!--role, area = for blind people-->
+            <div id="menuTopNav" class="topnav__menu"
+                 role="dialog"
+                 aria-labelledby="nav-label">
+                <!--role, area = for blind people-->
+                <button id="btnClose" class="topnav__close"
+                        aria-labelledby="close-label">
+                    <img src="/img/close-button.svg" alt="" width="25" height="26">
+                </button>
+                <ul class="topnav__links">
+                    <li class="topnav__item">
+                        <a href="/" class="topnav__link">Home</a>
+                    </li>
+                    <li class="topnav__item">
+                        <a href="/" class="topnav__link">Features</a>
+                    </li>
+                    <li class="topnav__item">
+                        <a href="/" class="topnav__link">Pricing</a>
+                    </li>
+                    <li class="topnav__item">
+                        <a href="/" class="topnav__link">About</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </div>
 </header>
@@ -352,7 +376,6 @@
             </div>
         </div>
     </section>
-
     <section class="fw-cta fullwidth">
         <div class="wrapper fw-cta__wrapper fullwidth__wrapper">
             <h2 class="fw-cta__title fullwidth__title">Get started with Mythos today</h2>
@@ -367,7 +390,7 @@
         </div>
     </section>
 </main>
-<footer class="footer">
+<footer id="footer" class="footer">
     <h2 class="visually-hidden">Footer</h2>
     <div class="wrapper footer__wrapper">
         <div class="footer__top">

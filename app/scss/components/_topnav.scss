@@ -1,6 +1,9 @@
 @use "../util/functions" as *;
 
 .topnav {
+  position: sticky;//este sticky
+  top: 0;//la marginea de sus a paginii
+  z-index: 10;
   background-color: var(--color-header-bg);
 
   &__wrapper {
@@ -30,26 +33,112 @@
     }
   }
 
+  &__overlay {
+    opacity: 0;
+
+    @media (width < rem(600)) {
+      position: fixed;
+      inset: 0;
+      background-color: var(--color-topnav-menu-overlay);
+      pointer-events: none; //nu lasă sa apeși click pe overlay ci prin el
+      transition: opacity 0.25s ease-in-out;
+
+      //daca overlay are un sibling direct cu o clasa topnav__open
+      //si un atribut aria-expanded="true", atunci sunt aplicate
+      //următoarele setări lui overlay
+      &:has(+ .topnav__open[aria-expanded="true"]) {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__open, &__close {
+    display: none;
+
+    @media (width < rem(600)) {
+      display: block;
+    }
+  }
+
+  &__open {
+    //atunci când elementul are atributul aria-expended="true"
+    &[aria-expanded="true"] {
+      //alege următorul (de mai jos) sibling (același nivel)
+      //cu clasa .topnav__menu
+      + .topnav__menu {
+        translate: 0 0;
+
+        @media (prefers-reduced-motion){
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__menu {
+    @media (width < rem(600)) {
+      position: fixed;
+      inset: 0 0 auto 0; //position - top right bottom left
+      background-color: var(--color-topnav-menu-bg);
+      padding: 12px 24px 120px;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 12px 12px var(--color-topnav-menu-shadow);
+      translate: 0 -110%;
+
+      &.animating{
+        transition: translate 0.25s ease-in-out;
+
+        @media (prefers-reduced-motion){
+          transition-property: opacity;
+        }
+      }
+
+      @media (prefers-reduced-motion) {
+        translate: 0;
+        opacity: 0;
+      }
+    }
+  }
+
+  &__close {
+    margin-inline-start: auto;
+  }
+
   &__links {
     display: flex;
-    gap: 20px;
+    gap: 40px;
     //list-style-type: none;
     //padding: 0;
 
-    @media (width >= rem(600)) {
-      gap: 40px;
+    @media (width < rem(600)) {
+      flex-direction: column;
+      align-items: center;
+      margin-block-start: 84px;
     }
   }
 
   &__item {
+    &:first-child {
+      display: none;
+
+      @media (width < rem(600)) {
+        display: block;
+      }
+    }
   }
 
   &__link {
     font-size: var(--font-size-topnav);
     font-weight: 700;
+    line-height: 1;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--color-text-light);
+
+    @media (width < rem(600)) {
+      text-transform: none;
+    }
 
     &:after {
       content: ""; //is necessary

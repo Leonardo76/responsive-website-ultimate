@@ -24,6 +24,7 @@
     padding: 8px 20px;
     border-radius: 5px;
     flex: 3;//flex-grow - 3 = creste de 3 ori mai repede decât 1
+    background-color: var(--color-main-bg);
   }
 
   &__button {

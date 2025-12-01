@@ -3,8 +3,9 @@
   --c-gray-dark: hsl(233, 14%, 25%);
   --c-gray-dark-40: hsla(233, 14%, 25%, 40%);
   --c-purple: hsl(232, 58%, 55%);
+  --c-purple-dark-60: hsla(232, 58%, 35%, 60%);
   --c-teal: hsl(180, 100%, 42%);
-  --c-teal-semitransparent: hsla(0, 0%, 100%,50%);
+  --c-teal-semitransparent: hsla(0, 0%, 100%, 50%);
   --c-teal-dark: hsl(180, 100%, 37%);
   --c-transparent: transparent;
   --c-magenta: hsl(320, 85%, 41%);
@@ -16,6 +17,9 @@
   --color-text-light: var(--c-white);
   --color-text-link: var(--c-magenta);
   --color-header-bg: var(--c-purple);
+  --color-topnav-menu-bg: var(--c-purple);
+  --color-topnav-menu-shadow: var(--c-purple-dark-60);
+  --color-topnav-menu-overlay: var(--c-gray-dark-40);
   --color-topnav-gradient-1: var(--c-teal);
   --color-topnav-gradient-2: var(--c-yellow);
   --color-hero-bg: var(--c-purple);
@@ -38,7 +42,6 @@
   --color-blog-gradient-2: var(--c-magenta);
   --color-blog-link-hover: var(--c-magenta);
   --color-blog-shadow: var(--c-gray-dark-40);
-
   --color-fullwidth-bg: var(--c-magenta);
   --color-cta-gradient-1: var(--c-gray-dark);
   --color-cta-gradient-2: var(--c-purple);
@@ -46,12 +49,12 @@
   --color-footer-link-hover: var(--c-magenta);
 }
 
-.testimonial{
+.testimonial {
   --color-bg: var(--color-main-bg);
   --color-text: var(--color-text-dark);
   --color-icon: var(--c-teal);
 
-  &.dark{
+  &.dark {
     --color-bg: var(--c-purple);
     --color-text: var(--color-text-light);
     --color-icon: var(--c-teal-semitransparent);

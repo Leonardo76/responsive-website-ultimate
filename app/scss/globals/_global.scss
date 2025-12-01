@@ -52,7 +52,7 @@ header ul, footer ul {
 p {
   font-size: var(--font-size-p);
 
-  &.small{
+  &.small {
     font-size: var(--font-size-p-small);
   }
 
@@ -88,6 +88,8 @@ img, picture, svg, video {
 }
 
 input, button, textarea, select {
-  font: inherit;//oblig sa ia fontul din body nu pe cel implicit din browser
+  font: inherit; //oblig sa ia fontul din body nu pe cel implicit din browser
   border: none;
+  padding: 0;
+  background: none;
 }
