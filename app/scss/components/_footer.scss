@@ -1,3 +1,5 @@
+@use "../util/functions" as *;
+
 .footer {
   &__wrapper {
     display: grid;
@@ -5,7 +7,7 @@
     gap: 40px 20px;
     //grid-auto-flow: column;
 
-    @media(width >= calc(600 / 16 * 1rem)) {
+    @media(width >= rem(600)) {
       grid-template-columns: repeat(4, auto);//1fr = equal space; auto=based on content
     }
   }
@@ -23,7 +25,7 @@
   }
 
   &__logo {
-    width: calc(128 / 16 * 1rem);
+    width: 128px;
     margin-block-end: 10px;
   }
 
@@ -35,7 +37,7 @@
   }
 
   &__title {
-    font-size: calc(22 / 16 * 1rem);
+    font-size: rem(22);
     margin-block-end: 6px;
   }
 
@@ -51,7 +53,7 @@
     display: inline-flex;
     gap: 16px;
     align-items: center;
-    font-size: calc(18 / 16 * 1rem);
+    font-size: rem(18);
     color: var(--color-text-dark);
     transition: color 0.15s ease-in-out;
 
@@ -66,7 +68,7 @@
   }
 
   &__social-svg {
-    width: calc(18 / 16 * 1rem);
+    width: rem(18);
   }
 
   &__social-path {

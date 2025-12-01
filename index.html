@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mythos</title>
     <link rel="stylesheet" href="style.css">
+    <script src="body-scroll-lock-upgrade.js"></script>
     <script src="script.js" defer></script>
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"/>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
@@ -28,17 +29,40 @@
                  height="36">
         </a>
         <nav>
-            <ul class="topnav__links">
-                <li class="topnav__item">
-                    <a href="/" class="topnav__link">Features</a>
-                </li>
-                <li class="topnav__item">
-                    <a href="/" class="topnav__link">Pricing</a>
-                </li>
-                <li class="topnav__item">
-                    <a href="/" class="topnav__link">About</a>
-                </li>
-            </ul>
+            <!-- span and aria attributes are for blind people-->
+            <span id="nav-label" hidden>Navigation</span>
+            <span id="close-label" hidden>Close Navigation</span>
+
+            <div class="topnav__overlay"></div>
+            <button id="btnOpen" class="topnav__open"
+                    aria-expanded="false"
+                    aria-labelledby="nav-label">
+                <img src="/img/hamburger.svg" alt="" width="30" height="23">
+            </button>
+            <!--role, area = for blind people-->
+            <div id="menuTopNav" class="topnav__menu"
+                 role="dialog"
+                 aria-labelledby="nav-label">
+                <!--role, area = for blind people-->
+                <button id="btnClose" class="topnav__close"
+                        aria-labelledby="close-label">
+                    <img src="/img/close-button.svg" alt="" width="25" height="26">
+                </button>
+                <ul class="topnav__links">
+                    <li class="topnav__item">
+                        <a href="/" class="topnav__link">Home</a>
+                    </li>
+                    <li class="topnav__item">
+                        <a href="/" class="topnav__link">Features</a>
+                    </li>
+                    <li class="topnav__item">
+                        <a href="/" class="topnav__link">Pricing</a>
+                    </li>
+                    <li class="topnav__item">
+                        <a href="/" class="topnav__link">About</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </div>
 </header>
@@ -107,15 +131,92 @@
                  height="465">
         </div>
     </section>
-    <section class="testimonial">
+    <section class="alt-features">
+        <div class="wrapper alt-features__wrapper">
+            <div class="alt-features__item">
+                <img src="/img/laptop-check.svg"
+                     alt="laptop with green check mark"
+                     class="alt-features__image"
+                     width="401"
+                     height="242">
+                <div class="alt-features__text">
+                    <h3 class="large alt-features__title">
+                        <span class="alt-features__pre-title">
+                            AI-Powered Matching
+                        </span>
+                        Avoid human error
+                    </h3>
+                    <p class="medium alt-features__description">
+                        Ut sapien lectus, vulputate vitae lacus vel, incidunt sodales ipsum. Proin a sem molestie,
+                        pulvinar ante non, laoreet ipsum. Sed nec pretium est. Nunc lectus sem.
+                    </p>
+                </div>
+            </div>
+            <div class="alt-features__item">
+                <img src="/img/tablet-phone.svg"
+                     alt="tablet and phone showing pop-up"
+                     class="alt-features__image"
+                     width="353"
+                     height="345">
+                <div class="alt-features__text">
+                    <h3 class="large alt-features__title">
+                        <span class="alt-features__pre-title">
+                            Immediate notifications
+                        </span>
+                        Never miss an alert again
+                    </h3>
+                    <p class="medium alt-features__description">
+                        Lorem ipsum dolor sit amet, <a href="">consectetur adipiscing</a> elit. Sed purus neque, tempor
+                        sit amet
+                        fringilla in, aliquam et justo. Aenean ac porta urna. Nullam quis mattis mauris.
+                    </p>
+                </div>
+            </div>
+            <div class="alt-features__item">
+                <img src="/img/tablet-payments.svg"
+                     alt="tablet with dashboard"
+                     class="alt-features__image"
+                     width="242"
+                     height="345">
+                <div class="alt-features__text">
+                    <h3 class="large alt-features__title">
+                        <span class="alt-features__pre-title">
+                            Protected Payments
+                        </span>
+                        Send payments from anywhere
+                    </h3>
+                    <p class="medium alt-features__description">
+                        Ut sapien lectus, vulputate vitae lacus vel, tincidunt sodales ipsum. <a href="">Proin a sem
+                        mattis,</a>
+                        pulvinar ante non, laoreet ipsum. Sed nec pretium est. Nunc lectus sem.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="testimonial dark">
         <h2 class="visually-hidden">Testimonial</h2>
         <div class="wrapper testimonial__wrapper">
             <figure class="testimonial__figure">
-                <img src="/img/quotation-mark-teal.svg"
-                     alt=""
-                     class="testimonial__icon"
-                     width="78" height="66"
-                >
+                <svg class="testimonial__icon"
+                     width="78"
+                     height="66" viewBox="0 0 78 66" fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                     aria-hidden="true">//hide the svg from screen readers
+                    <path class="testimonial__icon-path"
+                          d="M17.8829 66C11.922 66 7.41951 63.8319 4.37561 59.4957C1.45854 55.0319 0 48.8463 0
+                    40.9391C0 31.8841 2.21951 23.913 6.65854 17.0261C11.0975 10.1391 17.8829 4.46377 27.0146 0L33.1024
+                    12.2435C27.3951 15.1768 23.0829 18.5565 20.1659 22.3826C17.3756 26.0811 15.9805 30.8 15.9805
+                    36.5391C16.361 36.4116 16.9951 36.3478 17.8829 36.3478C21.9414 36.3478 25.3658 37.6232 28.1561
+                    40.1739C31.0731 42.5971 32.5317 45.9768 32.5317 50.313C32.5317 55.1594 31.1366 58.9855 28.3463
+                    61.7913C25.5561 64.5971 22.0683 66 17.8829 66ZM62.7805 66C56.8195 66 52.3171 63.8319 49.2732
+                    59.4957C46.3561 55.0319 44.8976 48.8463 44.8976 40.9391C44.8976 31.8841 47.1171 23.913 51.5561
+                    17.0261C55.9951 10.1391 62.7805 4.46377 71.9122 0L78 12.2435C72.2927 15.1768 67.9805 18.5565
+                    65.0634 22.3826C62.2731 26.0811 60.8781 30.8 60.8781 36.5391C61.2585 36.4116 61.8927 36.3478
+                    62.7805 36.3478C66.839 36.3478 70.2634 37.6232 73.0537 40.1739C75.9707 42.5971 77.4293 45.9768
+                    77.4293 50.313C77.4293 55.1594 76.0342 58.9855 73.2439 61.7913C70.4536 64.5971 66.9659 66 62.7805
+                    66Z"/>
+                </svg>
                 <blockquote class="testimonial__blockquote">
                     <p class="testimonial__quote-text">
                         When I first started Evermindly, it was a bootstrapped business. However, we were quickly
@@ -135,19 +236,161 @@
                         Janice Hsu<br> Founder and CEO, Evermindly
                     </p>
                 </figcaption>
+                <svg class="testimonial__icon"
+                     width="78"
+                     height="66" viewBox="0 0 78 66" fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                     aria-hidden="true">//hide the svg from screen readers
+                    <path class="testimonial__icon-path"
+                          d="M17.8829 66C11.922 66 7.41951 63.8319 4.37561 59.4957C1.45854 55.0319 0 48.8463 0
+                    40.9391C0 31.8841 2.21951 23.913 6.65854 17.0261C11.0975 10.1391 17.8829 4.46377 27.0146 0L33.1024
+                    12.2435C27.3951 15.1768 23.0829 18.5565 20.1659 22.3826C17.3756 26.0811 15.9805 30.8 15.9805
+                    36.5391C16.361 36.4116 16.9951 36.3478 17.8829 36.3478C21.9414 36.3478 25.3658 37.6232 28.1561
+                    40.1739C31.0731 42.5971 32.5317 45.9768 32.5317 50.313C32.5317 55.1594 31.1366 58.9855 28.3463
+                    61.7913C25.5561 64.5971 22.0683 66 17.8829 66ZM62.7805 66C56.8195 66 52.3171 63.8319 49.2732
+                    59.4957C46.3561 55.0319 44.8976 48.8463 44.8976 40.9391C44.8976 31.8841 47.1171 23.913 51.5561
+                    17.0261C55.9951 10.1391 62.7805 4.46377 71.9122 0L78 12.2435C72.2927 15.1768 67.9805 18.5565
+                    65.0634 22.3826C62.2731 26.0811 60.8781 30.8 60.8781 36.5391C61.2585 36.4116 61.8927 36.3478
+                    62.7805 36.3478C66.839 36.3478 70.2634 37.6232 73.0537 40.1739C75.9707 42.5971 77.4293 45.9768
+                    77.4293 50.313C77.4293 55.1594 76.0342 58.9855 73.2439 61.7913C70.4536 64.5971 66.9659 66 62.7805
+                    66Z"/>
+                </svg>
             </figure>
+        </div>
+    </section>
+    <section class="blog">
+        <div class="wrapper blog__wrapper">
+            <h2 class="blog__title">Recent blog posts</h2>
+            <div class="blog__grid">
+                <article class="blog__item">
+                    <img class="blog__image"
+                         src="/img/blog/blog1-2x.jpg"
+                         alt=""
+                         srcset="/img/blog/blog1-3x.jpg 3x"
+                         width="774"
+                         height="1032">
+                    <div class="blog__filter"></div>
+                    <div class="blog__text">
+                        <h3 class="blog__post-title">
+                            <a href="" class="blog__post-link">
+                                Navigating the Angel Investment Landscape
+                            </a>
+                        </h3>
+                        <p class="blog__post-description small">Vestibulum ultrices erat est, non imperdiet velit
+                            ultricies a.
+                            Proin erat orci, lacinia a eros nec, ultricies rutrum leo.</p>
+                        <div class="blog__post-meta">
+                            <time class="blog__post-datetime" datetime="2026-06-14">June 14, 2026</time>
+                            <p class="blog__post-readtime">8 min read</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="blog__item">
+                    <img class="blog__image"
+                         src="/img/blog/blog2-2x.jpg"
+                         alt=""
+                         srcset="/img/blog/blog2-3x.jpg 3x"
+                         width="1161"
+                         height="774">
+                    <div class="blog__filter"></div>
+                    <div class="blog__text">
+                        <h3 class="blog__post-title">
+                            <a href="" class="blog__post-link">
+                                The Ultimate Guide to Finding Promising Startups to Invest in
+                            </a>
+                        </h3>
+                        <p class="blog__post-description small">Etiam interdum rhoncus eros id bibendum. Duis rutrum
+                            nisl quis accumsan viverra.</p>
+                        <div class="blog__post-meta">
+                            <time class="blog__post-datetime" datetime="2026-05-21">May 21, 2026</time>
+                            <p class="blog__post-readtime">15 min read</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="blog__item">
+                    <img class="blog__image"
+                         src="/img/blog/blog3-2x.jpg"
+                         alt=""
+                         srcset="/img/blog/blog3-3x.jpg 3x"
+                         width="985"
+                         height="774">
+                    <div class="blog__filter"></div>
+                    <div class="blog__text">
+                        <h3 class="blog__post-title">
+                            <a href="" class="blog__post-link">
+                                Industry Insights: How to Identify Emerging Trends
+                            </a>
+                        </h3>
+                        <p class="blog__post-description small">Non imperdiet velit ultricies a. Proin erat orci,
+                            lacinia a eros nec, ultricies rutrum leo.</p>
+                        <div class="blog__post-meta">
+                            <time class="blog__post-datetime" datetime="2026-05-09">May 9, 2026</time>
+                            <p class="blog__post-readtime">11 min read</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="blog__item">
+                    <img class="blog__image"
+                         src="/img/blog/blog4-2x.jpg"
+                         alt=""
+                         srcset="/img/blog/blog4-3x.jpg 3x"
+                         width="801"
+                         height="1200">
+                    <div class="blog__filter"></div>
+                    <div class="blog__text">
+                        <h3 class="blog__post-title">
+                            <a href="" class="blog__post-link">
+                                Building Connections to Uncover Investment Opportunities
+                            </a>
+                        </h3>
+                        <p class="blog__post-description small">Duis rutrum nisl quis accumsan viverra. Morbi risus
+                            ante, convallis vel nulla ut, iaculis maximus sapien.</p>
+                        <div class="blog__post-meta">
+                            <time class="blog__post-datetime" datetime="2026-04-18">April 18, 2026</time>
+                            <p class="blog__post-readtime">18 min read</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="blog__item">
+                    <img class="blog__image"
+                         src="/img/blog/blog5-2x.jpg"
+                         alt=""
+                         srcset="/img/blog/blog5-3x.jpg 3x"
+                         width="1200"
+                         height="900">
+                    <div class="blog__filter"></div>
+                    <div class="blog__text">
+                        <h3 class="blog__post-title">
+                            <a href="" class="blog__post-link">
+                                Insider Tips for Finding Hidden Gems
+                            </a>
+                        </h3>
+                        <p class="blog__post-description small">Vestibulum ultrices erat est, non imperdiet velit
+                            ultricies a. Proin erat orci.</p>
+                        <div class="blog__post-meta">
+                            <time class="blog__post-datetime" datetime="2026-03-30">March 30, 2026</time>
+                            <p class="blog__post-readtime">9 min read</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
     <section class="fw-cta fullwidth">
         <div class="wrapper fw-cta__wrapper fullwidth__wrapper">
             <h2 class="fw-cta__title fullwidth__title">Get started with Mythos today</h2>
             <p class="fw-cta__description fullwidth__description large">
-                Find the next undiscovered unicorn with a free 14-day trial.</p>
-            <a href="" class="button primary white fw-cta__button ">Free trial</a>
+                Contact us to find the next undiscovered unicorn.</p>
+            <form class="form" action="" method="post">
+                <label class="form__label" for="txtEmail">Email address</label>
+                <input class="form__text" type="email" name="email" id="txtEmail" required
+                       placeholder="Enter your email address">
+                <button class="button primary white form__button" type="submit">Contact</button>
+            </form>
         </div>
     </section>
 </main>
-<footer class="footer">
+<footer id="footer" class="footer">
     <h2 class="visually-hidden">Footer</h2>
     <div class="wrapper footer__wrapper">
         <div class="footer__top">

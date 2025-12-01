@@ -1,0 +1,102 @@
+@use "../util/functions" as *;
+
+.blog {
+  &__wrapper {
+    
+  }
+
+  &__title {
+    text-align: center;
+    margin-block-end: 40px;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 20px;
+    //grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); //încearcă sa afișeze cat mai multe coloane de dimensiune
+    //// intre 300px si 1fr. Daca nu pun minmax, va fi de dimensiune fixa 300px si va rămâne spațiu liber daca nu poate sa
+    ////puna o coloana pentru ca spațiul rămas este mai mic de 300px. Cu 1fr, mărește coloana astfel încât sa intre cat
+    //// mai multe coloane
+    $pix: rem(300);
+    grid-template-columns: repeat(auto-fit, minmax(min($pix, 100%), 1fr));
+  }
+
+  &__item {
+    position: relative;
+    display: grid;
+    grid-template: 1fr / 1fr;
+    border-radius: 16px;
+    overflow: hidden; //daca nu pun asta, border radius nu se aplica copiilor.
+    // Asta forțează copii sa ascundă ce este in afara părintelui
+    min-height: rem(350);
+
+    > * {
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+    }
+  }
+
+  &__image {
+    position: absolute; //il fac absolut, deci nu mai depinde de părinte si il scot din stack-ul normal,
+    //dar este poziționat absolut fata de cel declarat relative care este, in acest caz, chiar părintele,
+    //care impune limite de overflow si nu poate ieși din limitele părintelui (este liber in limitele relativului).
+    //imaginea fiind mai mare decât cardul, si impunând overflow, imaginea este tăiata la dimensiunile elementului
+    //relativ. Nu este niciodată mai mica decât părintele datorita clasei wrapper care impune lățime maxima
+    height: 100%; // sa acopere tot părintele - 100% din mărimea părintelui
+    object-fit: cover; //daca nu fac asta, imaginea este stretched când fac height 100% (pt imagini mai mici,
+    // nu menține aspect ratio)
+    //object-position: center top;//cum poziționez imaginea in container
+  }
+
+  &__filter {
+    background: linear-gradient(45deg, var(--color-blog-gradient-1) 30%, var(--color-blog-gradient-2));
+    mix-blend-mode: lighten; // blend the filter with the image
+    //align-self: center; //AICI
+  }
+
+  &__text {
+    display: grid;
+    gap: 16px;
+    background-color: var(--color-main-bg);
+    margin: 10px;
+    padding: 16px;
+    border-radius: 8px;
+    align-self: center;
+    isolation: isolate; //sau linia de mai jos
+    //position: relative; //daca nu pun asta, mix-blend-mode: lighten; filtrează si textul si il face de culoarea gradientului
+    //cu asta, textul nu mai face parte din stack-ul (unul deasupra celuilalt) creat prin plasarea elementelor fin grid
+    //in aceeași celula ci il face relativ fata de părintele sau (&__item)
+    box-shadow: 0 4px 10px var(--color-blog-shadow);
+  }
+
+  &__post-title {
+  }
+
+  &__post-link {
+    color: var(--color-text-dark);
+    transition: color 0.15s ease-in-out;
+
+    &:hover {
+      color: var(--color-blog-link-hover);
+    }
+  }
+
+  &__post-description {
+  }
+
+  &__post-meta {
+    display: flex;
+    justify-content: space-between;
+
+    > * {
+      font-size: var(--font-size-datetime);
+    }
+  }
+
+  &__post-datetime {
+    text-transform: uppercase;
+  }
+
+  &__post-readtime {
+  }
+}

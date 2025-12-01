@@ -1,0 +1,33 @@
+.form {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+
+
+  &__label, &__text {
+    font-size: var(--font-size-form);
+    line-height: 1;
+  }
+
+  &__label {
+    display: inline-block;
+    font-weight: 700;
+    flex: 100%; // flex = proprietate compusa:
+    //flex-grow = 0 - nu are voie sa crească, orice valoare mai mare decât 0 - are voie
+    //flex-shrink = 0 - nu are voie sa se micșoreze, orice valoare mai mare decât 0 - are voie
+    //flex-basis = in procente - dimensiunea inițiala
+    text-align: left;
+
+  }
+
+  &__text {
+    padding: 8px 20px;
+    border-radius: 5px;
+    flex: 3;//flex-grow - 3 = creste de 3 ori mai repede decât 1
+    background-color: var(--color-main-bg);
+  }
+
+  &__button {
+    flex: 1;
+  }
+}

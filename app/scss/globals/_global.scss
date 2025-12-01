@@ -33,6 +33,10 @@ h2 {
 
 h3 {
   font-size: var(--font-size-h3);
+
+  &.large {
+    font-size: var(--font-size-h3-large);
+  }
 }
 
 
@@ -47,6 +51,10 @@ header ul, footer ul {
 
 p {
   font-size: var(--font-size-p);
+
+  &.small {
+    font-size: var(--font-size-p-small);
+  }
 
   &.medium {
     font-size: var(--font-size-p-medium);
@@ -63,10 +71,25 @@ p {
       font-size: var(--font-size-p-large-desktop);
     }
   }
+
+  & > a {
+    color: var(--color-text-link);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 img, picture, svg, video {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+input, button, textarea, select {
+  font: inherit; //oblig sa ia fontul din body nu pe cel implicit din browser
+  border: none;
+  padding: 0;
+  background: none;
 }

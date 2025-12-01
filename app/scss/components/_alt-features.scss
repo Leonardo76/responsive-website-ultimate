@@ -1,0 +1,57 @@
+@use "../util/functions" as *;
+
+.alt-features {
+  &__wrapper {
+    display: grid;
+    gap: 60px;
+
+    @media (width >= rem(1000)) {
+      gap: 80px;
+    }
+
+  }
+
+  &__item {
+    display: grid;
+    gap: 40px 100px;
+    @media (width >= rem(1000)) {
+      grid-template-columns: 5fr 6fr;
+      align-items: center;
+
+      &:nth-child(#{odd of &}) { //aici merge si &:nth-child(odd)
+        grid-template-columns: 6fr 5fr;
+        .alt-features__image {
+          order: 1;
+        }
+      }
+    }
+  }
+
+  &__image {
+    justify-self: center;
+
+    @media (width < rem(600)) {
+      max-width: rem(200);
+      max-height: rem(200);
+      //object-fit: contain;//menține aspect ratio
+    }
+  }
+
+  &__text {
+  }
+
+  &__title {
+    line-height: 1;
+    margin-block-end: 10px;
+  }
+
+  &__pre-title {
+    display: block;
+    font-size: var(--font-size-pre-title);
+    text-transform: uppercase;
+    margin-block-end: 10px;
+  }
+
+  &__description {
+  }
+}

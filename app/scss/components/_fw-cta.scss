@@ -1,3 +1,5 @@
+@use "../util/functions" as *;
+
 .fw-cta {
   background: linear-gradient(to right,
           var(--color-cta-gradient-1),
@@ -5,7 +7,7 @@
           var(--color-cta-gradient-3) 150%);
   color: var(--color-text-light);
 
-  @media (width >= calc(1000 / 16 * 1rem)) {
+  @media (width >= rem(1000)) {
     background: linear-gradient(to right,
             var(--color-cta-gradient-1),
             var(--color-cta-gradient-2) 55%,

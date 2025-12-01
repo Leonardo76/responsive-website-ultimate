@@ -1,30 +1,40 @@
+@use "../util/functions" as *;
+
 .hero {
   background-color: var(--color-hero-bg);
+  background-image: url("/img/hero-wave.svg");
+  background-repeat: no-repeat;
+  background-position: center calc(100% + 5px);
+  background-size: 1440px auto;
   color: var(--color-text-light);
+
+  @media (width >= rem(1000)) {
+    background-position: -5px calc(100% + 5px);
+    background-size: calc(100% + 10px) auto;
+  }
+
+  @media (width >= rem(2000)) {
+    background-size: calc(100% + 10px) 100px;
+  }
 
   &__wrapper {
     //display: flow-root;//creează un context de tip bloc pentru wrapper astfel încât marginea imaginii nu mai impinge in navbar
     //daca folosim margin-block (top si bottom) in image
     display: grid;
-    padding-block: 30px 60px;
+    padding-block: 30px 120px;
 
-    @media (width >= calc(1000 / 16 * 1rem)) {
+    @media (width >= rem(1000)) {
       grid-template-columns: 6fr 5fr;
-      align-items: center;
-      padding-block: 40px 80px;
+      padding-block: 80px 0;
     }
   }
 
   &__image {
-    width: calc(200 / 16 * 1rem);
+    width: clamp(12.5rem, 1.888rem + 45vw, 30.1875rem);
     margin-block-end: 40px;
     justify-self: center;
 
-    @media (width >= calc(600 / 16 * 1rem)) {
-      width: calc(483 / 16 * 1rem);
-    }
-
-    @media (width >= calc(1000 / 16 * 1rem)) {
+    @media (width >= rem(1000)) {
       order: 1;
       margin-block-end: 0;
       justify-self: end;
@@ -37,14 +47,14 @@
   &__title {
     margin-block-end: 12px;
 
-    @media (width >= calc(600 / 16 * 1rem)) {
+    @media (width >= rem(600)) {
       margin-block-end: 20px;
     }
   }
 
   &__content {
-    margin-block-end: calc(40 / 16 * 1rem);
-    max-width: 40ch;
+    margin-block-end: 40px;
+    max-width: 50ch;
   }
 
   &__buttons {
